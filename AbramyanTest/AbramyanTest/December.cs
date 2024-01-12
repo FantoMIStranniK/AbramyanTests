@@ -241,6 +241,7 @@ namespace AbramyanTest
         private (Vector2 firstPoint, Vector2 secondPoint, float distance) Array134(List<Vector2> vectors)
         {
             float maxDistance = float.MinValue;
+
             Vector2 firstPoint = new();
             Vector2 secondPoint = new();
 
