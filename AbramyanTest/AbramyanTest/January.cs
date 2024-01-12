@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
 namespace AbramyanTest
 {
@@ -14,7 +8,6 @@ namespace AbramyanTest
         {
 
         }
-
 
         public float N1(Vector2 pointOne, Vector2 pointTwo, Vector2 pointThree)
         {
@@ -137,17 +130,26 @@ namespace AbramyanTest
 
         public int MinMax20(List<int> N)
         {
-            int countOfExtreme = 0;
+            int countOfMin = 0;
+            int countOfMax = 0;
 
-            for(int i = 1; i < N.Count - 1; i++)
+            int max = int.MinValue;
+            int min = int.MaxValue;
+
+            for(int i = 0; i < N.Count(); i++)
             {
-                if (N[i] > N[i - 1] && N[i] < N[i + 1])
-                    countOfExtreme++;
-                else if(N[i] < N[i - 1] && N[i] > N[i + 1])
-                    countOfExtreme++;
+                if (N[i] > max)
+                    countOfMax = 1;
+                else if (N[i] == max)
+                    countOfMax++;
+
+                if (N[i] < min)
+                    countOfMin = 1;
+                else if (N[i] == min)
+                    countOfMin++;
             }
 
-            return countOfExtreme;
+            return countOfMax + countOfMin;
         }
 
         public List<int> Array61(List<int> A)
