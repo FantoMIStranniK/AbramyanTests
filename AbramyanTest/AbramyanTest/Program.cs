@@ -4,9 +4,7 @@
     {
         static void Main(string[] args)
         {
-            January test = new January();
-
-            test.Test();
+            March march = new March();
         }
     }
 }
